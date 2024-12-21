@@ -1,5 +1,26 @@
 let calificaciones = [4, 6, 3, 8, 3];
 
+function datosAlumno(){
+    const nombre = document.querySelector("#Nombre").value;
+    const apellido1 = document.querySelector("#apellido1").value;
+    const apellido2 = document.querySelector("#apellido2").value;
+    const grado = document.querySelector("#grado").value;
+    
+    alert(nombre + apellido1 + apellido2 + grado);
+}
+
+function enviarCalifiaciones(){
+    const mate = document.querySelector("#Matematicas").value;
+    const espa = document.querySelector("#Espanol").value;
+    const infor = document.querySelector("#Informatica").value;
+    const histo = document.querySelector("#Historia").value;
+    const ing = document.querySelector("#Ingles").value;
+    
+    console.log(map);
+    const map = new Map ([mate, espa, infor, histo, ing])
+    Array.from(map)
+}
+
 
 function cargarCalificaciones(){
     const lista = document.querySelector('#listaCalificaciones');
