@@ -1,4 +1,5 @@
 let calificaciones = [4, 6, 3, 8, 3];
+let newCalificaciones = [];
 
 function datosAlumno(){
     const nombre = document.querySelector("#Nombre").value;
@@ -10,22 +11,27 @@ function datosAlumno(){
 }
 
 function enviarCalifiaciones(){
+
     const mate = document.querySelector("#Matematicas").value;
     const espa = document.querySelector("#Espanol").value;
     const infor = document.querySelector("#Informatica").value;
     const histo = document.querySelector("#Historia").value;
     const ing = document.querySelector("#Ingles").value;
     
-    console.log(map);
-    const map = new Map ([mate, espa, infor, histo, ing])
-    Array.from(map)
+    newCalificaciones.push(mate);
+    newCalificaciones.push(espa);
+    newCalificaciones.push(infor);
+    newCalificaciones.push(histo);
+    newCalificaciones.push(ing);
+    
+    console.log(newCalificaciones);
 }
 
 
 function cargarCalificaciones(){
     const lista = document.querySelector('#listaCalificaciones');
     console.log(lista)
-    for (const muestraCalificaiones of calificaciones) {
+    for (const muestraCalificaiones of newCalificaciones) {
         const listaCali = document.createElement('li');
         listaCali.innerText = muestraCalificaiones;
         lista.appendChild(listaCali);
@@ -39,7 +45,7 @@ function promedio(){
     let calcularPromedio = 0;
     
     for(i=0; i < 5; i++){
-        calcularPromedio += calificaciones[i];
+        calcularPromedio += newCalificaciones[i];
     }
     
     let promedioFinal = (calcularPromedio / 5)
@@ -51,8 +57,8 @@ function notaMasAlta(){
    let notaAlta = 0;
    let i = 0;
    while(i < 5){
-        if(calificaciones[i] > notaAlta){
-            notaAlta = calificaciones[i];
+        if(newCalificaciones[i] > notaAlta){
+            notaAlta = newCalificaciones[i];
         }
         i++;
    }
@@ -64,7 +70,7 @@ function aplazo(){
     let reprobo = "No"
     let i = 0;
     do {
-        if(calificaciones[i] < 4){
+        if(newCalificaciones[i] < 4){
             reprobo = "si"
             break;
         }
