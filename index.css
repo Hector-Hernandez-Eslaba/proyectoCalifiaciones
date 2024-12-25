@@ -111,7 +111,7 @@ article{
     outline-color: rgb(236, 185, 64);
 }
 .box:focus ~ .text,
-.boxt:focus ~ .tetx{
+.box:valid ~ .text{
     transform: translateY(-20px);
     color: #000;
 }
