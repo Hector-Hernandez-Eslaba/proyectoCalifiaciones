@@ -18,11 +18,7 @@ function enviarCalifiaciones(){
     const histo = document.querySelector("#Historia").value;
     const ing = document.querySelector("#Ingles").value;
     
-    newCalificaciones.push(mate);
-    newCalificaciones.push(espa);
-    newCalificaciones.push(infor);
-    newCalificaciones.push(histo);
-    newCalificaciones.push(ing);
+    newCalificaciones.push(mate, espa, infor, histo, ing);
     
     console.log(newCalificaciones);
 }
@@ -43,17 +39,18 @@ function cargarCalificaciones(){
 
 function promedio(){
     let calcularPromedio = 0;
+    const promedioMostrar = document.querySelector("#mostrarPromedio")
     
     for(i=0; i < 5; i++){
         calcularPromedio += newCalificaciones[i];
     }
     
     let promedioFinal = (calcularPromedio / 5)
-    
-    console.log(promedioFinal)
+    promedioMostrar.textContent = promedioFinal
 }
 
 function notaMasAlta(){
+    const mostrarNota = document.querySelector("#mostrarNotaAlta")
    let notaAlta = 0;
    let i = 0;
    while(i < 5){
@@ -62,11 +59,12 @@ function notaMasAlta(){
         }
         i++;
    }
-   console.log(notaAlta)
+   mostrarNota.textContent = notaAlta
 }
 
 
 function aplazo(){
+    const mostrarReprobo = document.querySelector("#Aplazos")
     let reprobo = "No"
     let i = 0;
     do {
@@ -77,5 +75,5 @@ function aplazo(){
         i++
     }while(i < 4);
 
-    console.log(reprobo)
+    mostrarReprobo.textContent = reprobo
 }

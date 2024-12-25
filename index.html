@@ -5,70 +5,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Boleta</title>
 </head>
 
 <body>
+    <nav>
+        <img class="imgNav" src="./Imagenes/Skraken.svg" alt="Logo">
+        <div class="emailBox">
+            <img class="imgNav" src="./Imagenes/mail.svg" alt="correo">
+            <p><a href="mailto:hheslaba@gmail.com">hheslaba@gmail.com</a></p>
+        </div>
+    </nav>
     <main>
-        <nav>
-            <img src="" alt="Logo">
-            <div class="contacto">
-                <img src="" alt="cel">
-                <p>238-187-64-61</p>
-                <img src="" alt="correo">
-                <p>hheslaba@gmail.com</p>
-            </div>
-        </nav>
+        <h1>Promedios generales</h1>
         <article>
-            <h1>Promedios generales</h1>
-            <form action="">
-                <div class="boxInputs">
-                    <label for="">Nombre del alumno</label>
-                    <input id="Nombre" type="text" required>
-                    <label for="">Apellido paterno</label>
-                    <input id="apellido1" type="text" required>
-                    <label for="">Apellido materno</label>
-                    <input id="apellido2" type="text" required>
-                    <label for="">grado</label>
-                    <input id="grado" type="text" required>
-                </div>
-                <div>
-                    <button onclick="datosAlumno()">Enviar</button>
-                    <button onclick="reset()">Limpiar</button>
-                </div>
-            </form>
-        </article>
-        <div class="boxCalificaciones">
-            <h2>Ingrese las cargarCalificaciones</h2>
-            <div>
-                <label for="">Matematicas</label>
-                <input id="Matematicas" type="number" min="1" max="2" required>
-                <label for="">Espanol</label>
-                <input id="Espanol" type="number" required>
-                <label for="">Informatica</label>
-                <input id="Informatica" type="number" required>
-                <label for="">Historia</label>
-                <input id="Historia" type="number" required>
-                <label for="">Ingles</label>
-                <input id="Ingles" type="number" required>
+            <div class="containInputs">
+                <input class="box" id="Nombre" type="text" required>
+                <label class="text" for="Nombre">Nombre del alumno</label>
             </div>
-            <div>
+            <div class="containInputs">
+                <input class="box" id="apellido1" type="text" required>
+                <label class="text" for="apellido1">Apellido paterno</label>
+            </div>
+            <div class="containInputs">
+                <input class="box" id="apellido2" type="text" required>
+                <label class="text" for="apellido2">Apellido materno</label>
+            </div>
+            <div class="containInputs">
+                <input class="box" id="grado" type="text" required>
+                <label class="text" for="grado">grado</label>
+            </div>
+            </div>
+            <div class="boxButton">
+                <button onclick="datosAlumno()">Enviar</button>
+                <button onclick="reset()">Limpiar</button>
+            </div>
+            </div>
+        </article>
+        <h2>Ingrese las calificaciones</h2>
+        <div class="boxCalificaciones">
+            <div class="containCalificaciones">
+                <div class="boxMainCalificaciones">
+                    <input class="boxMateria" id="Matematicas" type="number" min="1" max="2" required>
+                    <label class="textMateria" for="">Matematicas</label>
+                </div>
+                <div class="boxMainCalificaciones">
+                    <input class="boxMateria" id="Espanol" type="number" required>
+                    <label class="textMateria" for="">Espanol</label>
+                </div>
+                <div class="boxMainCalificaciones">
+                    <input class="boxMateria" id="Informatica" type="number" required>
+                    <label class="textMateria" for="">Informatica</label>
+                </div>
+                <div class="boxMainCalificaciones">
+                    <input class="boxMateria" id="Historia" type="number" required>
+                    <label class="textMateria" for="">Historia</label>
+                </div>
+                <div class="boxMainCalificaciones">
+                    <input class="boxMateria" id="Ingles" type="number" required>
+                    <label class="textMateria" for="">Ingles</label>
+                </div>
+            </div>
+            <div class="boxButton">
                 <button onclick="enviarCalifiaciones()">Enviar</button>
                 <button onclick="reset()">Limpiar</button>
             </div>
         </div>
         <section>
-            <ul id="listaCalificaciones"></ul>
-            <button onclick="cargarCalificaciones()">Mostrar Notas</button>
-            <button onclick="promedio()">Promedio</button>
-            <button onclick="notaMasAlta()">Nota mas alta</button>
-            <button onclick="aplazo()">Aplazo</button>
-
-            <p id="Promedio">Promedio <span id="mostrarPromedio"></span></p>
-            <p id="notaAlta">Promedio <span id="mostrarNotaAlta"></span></p>
-            <p id="textoAplazo">Promedio <span id="Aplazos"></span></p>
+            <h4>Calidicaiones ingresadas</h4>
+            <div class="boxLista">
+                <ul id="listaCalificaciones"></ul>
+                <button onclick="cargarCalificaciones()">Mostrar Notas</button>
+            </div>
+            <h4>Promedios Finales</h4>
+            <div class="boxLista">
+                <button onclick="promedio()">Promedio</button>
+                <p id="Promedio">Promedio Final <span id="mostrarPromedio"></span></p>
+            </div>
+            <div class="boxLista">
+                <button onclick="notaMasAlta()">Nota mas alta</button>
+                <p id="notaAlta">La mejor nota alcanzada es: <span id="mostrarNotaAlta"></span></p>
+            </div>
+            <div class="boxLista">
+                <button onclick="aplazo()">Aplazo</button>
+                <p id="textoAplazo">Reprobo materias: <span id="Aplazos"></span></p>
+            </div>
         </section>
     </main>
+    <footer>
+        <p>creado por Hector Hernandez "Skraken"</p>
+    </footer>
 
 </body>
 <script src="index.js"></script>
