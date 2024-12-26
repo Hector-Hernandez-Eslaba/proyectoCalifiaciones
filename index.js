@@ -77,3 +77,29 @@ function aplazo(){
 
     mostrarReprobo.textContent = reprobo
 }
+
+function infoFull(){
+
+    const ventanaEmergente = document.querySelector(".containFullInfo");
+    const contentEmergente = document.createElement("div")
+    contentEmergente.className = "mainEmergente";
+    contentEmergente.innerHTML = ` <>
+        <p>Nombre del alumno: ${nombre + "" + apellido1 + "" + apellido2} </p>
+        <p>Grado: ${grado} </p>
+        <h1>Calificaciones por materia</h1>
+        <p>Matematicas: ${mate} </p>
+        <p>Español: ${espa} </p>
+        <p>Informatica: ${infor} </p>
+        <p>Historia: ${histo} </p>
+        <p>Ingles: ${ing} </p>
+
+        <p>Promedio general: ${promedioFinal} </p>
+        <p>Nota mas alta del alumno: ${notaAlta} </p>
+        <p>Reprovo Materias: ${reprobo} </p>
+    
+    </>
+    
+    `
+    console.log(ventanaEmergente)
+
+}

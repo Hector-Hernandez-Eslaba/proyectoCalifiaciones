@@ -7,7 +7,7 @@ body{
     display: grid;
     grid-template:
     "nav" 50px
-    "content" 900px
+    "content" 1200px
     "footer" 50px/400px;
     background: rgb(255,190,141);
     background: linear-gradient(180deg, rgba(255,190,141,1) 30%, rgba(255,138,140,1) 70%);
@@ -213,4 +213,18 @@ footer{
     position: relative;
     text-align: center;
     top: 15px;
+}
+
+/*Popup*/
+
+.popup{
+    cursor: pointer;
+}
+
+.containFullInfo{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
